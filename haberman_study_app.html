@@ -62,7 +62,6 @@ h1 em{font-style:italic;color:var(--vib);}
 
 .q-counter{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:.75rem;letter-spacing:.04em;}
 
-/* ── QUESTION CARD ── */
 .card{background:var(--surface);border:0.5px solid var(--border2);border-radius:var(--r);padding:1.75rem;margin-bottom:.75rem;animation:cardIn .28s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:12px 12px 0 0;}
 .card.cv::before{background:var(--vib);}
@@ -80,54 +79,23 @@ h1 em{font-style:italic;color:var(--vib);}
 .be{background:var(--green-dim);color:var(--green);}
 .bm{background:var(--yellow-dim);color:var(--yellow);}
 .bh{background:var(--red-dim);color:var(--red);}
-.btype{background:var(--surface3);color:var(--muted);border:0.5px solid var(--border2);}
 .exam-tag{background:rgba(251,146,60,.15);color:var(--traf);border:0.5px solid rgba(251,146,60,.3);font-size:10px;padding:1px 7px;border-radius:20px;font-family:'DM Mono',monospace;}
 
 .q-text{font-size:17px;color:var(--text);line-height:1.7;margin-bottom:1.5rem;}
 
-/* ── ANSWER CHOICES ── */
 .choices{display:flex;flex-direction:column;gap:10px;margin-bottom:1rem;}
-.choice{
-  background:var(--surface2);
-  border:0.5px solid var(--border2);
-  border-radius:var(--rs);
-  padding:12px 16px;
-  cursor:pointer;
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
-  font-size:14px;
-  color:var(--text);
-  line-height:1.6;
-  transition:all .15s;
-  text-align:left;
-  width:100%;
-  font-family:'DM Sans',sans-serif;
-}
+.choice{background:var(--surface2);border:0.5px solid var(--border2);border-radius:var(--rs);padding:12px 16px;cursor:pointer;display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text);line-height:1.6;transition:all .15s;text-align:left;width:100%;font-family:'DM Sans',sans-serif;}
 .choice:hover:not(.disabled){background:var(--surface3);border-color:rgba(255,255,255,.2);}
 .choice.disabled{cursor:default;}
 .choice.correct{background:var(--green-dim);border-color:rgba(52,211,153,.5);}
 .choice.wrong{background:var(--red-dim);border-color:rgba(248,113,113,.5);}
 .choice.reveal-correct{background:var(--green-dim);border-color:rgba(52,211,153,.5);}
-
-.choice-letter{
-  width:24px;height:24px;border-radius:50%;
-  background:var(--surface3);border:0.5px solid var(--border2);
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-family:'DM Mono',monospace;
-  color:var(--muted);flex-shrink:0;margin-top:1px;
-  transition:all .15s;
-}
+.choice-letter{width:24px;height:24px;border-radius:50%;background:var(--surface3);border:0.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:12px;font-family:'DM Mono',monospace;color:var(--muted);flex-shrink:0;margin-top:1px;transition:all .15s;}
 .choice.correct .choice-letter{background:var(--green);color:#000;border-color:var(--green);}
 .choice.wrong .choice-letter{background:var(--red);color:#000;border-color:var(--red);}
 .choice.reveal-correct .choice-letter{background:var(--green);color:#000;border-color:var(--green);}
 
-/* ── EXPLANATION BOX ── */
-.explanation{
-  background:var(--surface2);border:0.5px solid var(--border2);
-  border-radius:var(--rs);padding:1.25rem 1.5rem;
-  margin-bottom:.75rem;display:none;animation:fadeIn .22s ease;
-}
+.explanation{background:var(--surface2);border:0.5px solid var(--border2);border-radius:var(--rs);padding:1.25rem 1.5rem;margin-bottom:.75rem;display:none;animation:fadeIn .22s ease;}
 .explanation.shown{display:block;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
 .explanation-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
@@ -137,31 +105,68 @@ h1 em{font-style:italic;color:var(--vib);}
 .cx{margin-top:10px;padding:8px 12px;border-radius:var(--rs);background:rgba(192,132,252,.07);border-left:2px solid var(--vib);font-size:13.5px;color:#b89fd4;}
 .warn{margin-top:10px;padding:8px 12px;border-radius:var(--rs);background:rgba(251,146,60,.07);border-left:2px solid var(--traf);font-size:13.5px;color:#d4a87a;}
 
-/* ── FEEDBACK BAR ── */
-.feedback{
-  display:none;align-items:center;gap:10px;
-  padding:12px 16px;border-radius:var(--rs);
-  margin-bottom:.75rem;font-size:14px;font-weight:500;
-  animation:fadeIn .2s ease;
-}
+.feedback{display:none;align-items:center;gap:10px;padding:12px 16px;border-radius:var(--rs);margin-bottom:.75rem;font-size:14px;font-weight:500;animation:fadeIn .2s ease;}
 .feedback.shown{display:flex;}
 .feedback.correct-fb{background:var(--green-dim);border:0.5px solid rgba(52,211,153,.4);color:var(--green);}
 .feedback.wrong-fb{background:var(--red-dim);border:0.5px solid rgba(248,113,113,.4);color:var(--red);}
 .feedback-icon{font-size:18px;}
 
-/* ── NEXT BUTTON ── */
-.next-btn{
-  display:none;width:100%;padding:12px;
-  border-radius:var(--rs);border:0.5px solid var(--border2);
-  background:var(--surface2);font-family:'DM Sans',sans-serif;
-  font-size:15px;color:var(--text);cursor:pointer;
-  transition:all .15s;margin-bottom:.75rem;
-}
+.bottom-btns{display:flex;gap:8px;margin-bottom:.75rem;}
+.next-btn{flex:1;padding:12px;border-radius:var(--rs);border:0.5px solid var(--border2);background:var(--surface2);font-family:'DM Sans',sans-serif;font-size:15px;color:var(--text);cursor:pointer;transition:all .15s;display:none;}
 .next-btn:hover{background:var(--surface3);border-color:rgba(255,255,255,.2);}
 .next-btn:active{transform:scale(.98);}
 .next-btn.shown{display:block;}
+.ask-btn{padding:12px 18px;border-radius:var(--rs);border:0.5px solid rgba(192,132,252,.4);background:var(--vib-dim);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--vib);cursor:pointer;transition:all .15s;display:none;white-space:nowrap;}
+.ask-btn:hover{background:rgba(192,132,252,.2);}
+.ask-btn.shown{display:block;}
 
-/* ── DONE STATE ── */
+/* ══ AI TUTOR PANEL ══ */
+.tutor-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;display:none;align-items:flex-end;justify-content:center;}
+.tutor-overlay.open{display:flex;}
+.tutor-panel{
+  background:var(--surface);
+  border:0.5px solid var(--border2);
+  border-radius:var(--r) var(--r) 0 0;
+  width:100%;max-width:740px;
+  height:75vh;
+  display:flex;flex-direction:column;
+  animation:slideUp .3s cubic-bezier(.4,0,.2,1);
+}
+@keyframes slideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+.tutor-header{
+  padding:1rem 1.25rem;
+  border-bottom:0.5px solid var(--border2);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-shrink:0;
+}
+.tutor-title{font-size:15px;font-weight:500;color:var(--text);display:flex;align-items:center;gap:8px;}
+.tutor-title-icon{width:28px;height:28px;border-radius:50%;background:var(--vib-dim);border:0.5px solid rgba(192,132,252,.3);display:flex;align-items:center;justify-content:center;font-size:14px;}
+.tutor-close{background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;padding:4px;line-height:1;}
+.tutor-close:hover{color:var(--text);}
+.tutor-context{padding:10px 1.25rem;background:var(--surface2);border-bottom:0.5px solid var(--border2);font-size:12px;color:var(--muted);flex-shrink:0;font-style:italic;line-height:1.4;}
+.tutor-messages{flex:1;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:12px;}
+.msg{max-width:85%;font-size:14px;line-height:1.7;padding:10px 14px;border-radius:var(--r);}
+.msg.user{align-self:flex-end;background:var(--vib-dim);border:0.5px solid rgba(192,132,252,.3);color:var(--text);}
+.msg.ai{align-self:flex-start;background:var(--surface2);border:0.5px solid var(--border2);color:var(--text);}
+.msg.thinking{align-self:flex-start;background:var(--surface2);border:0.5px solid var(--border2);color:var(--muted);font-style:italic;}
+.tutor-input-row{padding:1rem 1.25rem;border-top:0.5px solid var(--border2);display:flex;gap:8px;flex-shrink:0;}
+.tutor-input{flex:1;background:var(--surface2);border:0.5px solid var(--border2);border-radius:var(--rs);padding:10px 14px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);outline:none;resize:none;}
+.tutor-input:focus{border-color:rgba(192,132,252,.4);}
+.tutor-send{padding:10px 16px;border-radius:var(--rs);border:0.5px solid rgba(192,132,252,.4);background:var(--vib-dim);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--vib);cursor:pointer;transition:all .15s;white-space:nowrap;}
+.tutor-send:hover{background:rgba(192,132,252,.2);}
+.tutor-send:disabled{opacity:.4;cursor:default;}
+
+/* ══ API KEY SETUP ══ */
+.api-setup{padding:2rem;text-align:center;}
+.api-setup h3{font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:400;margin-bottom:.75rem;color:var(--text);}
+.api-setup p{font-size:13px;color:var(--muted);margin-bottom:1rem;line-height:1.6;}
+.api-setup a{color:var(--vib);}
+.api-key-input{width:100%;background:var(--surface2);border:0.5px solid var(--border2);border-radius:var(--rs);padding:10px 14px;font-family:'DM Mono',monospace;font-size:13px;color:var(--text);outline:none;margin-bottom:10px;}
+.api-key-input:focus{border-color:rgba(192,132,252,.4);}
+.api-save-btn{padding:10px 24px;border-radius:var(--rs);border:0.5px solid rgba(192,132,252,.4);background:var(--vib-dim);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--vib);cursor:pointer;transition:all .15s;}
+.api-save-btn:hover{background:rgba(192,132,252,.2);}
+.api-note{font-size:11px;color:var(--muted);margin-top:8px;font-family:'DM Mono',monospace;}
+
 .done-state{text-align:center;padding:3rem 1rem;}
 .done-big{font-family:'DM Serif Display',serif;font-size:5rem;font-weight:400;color:var(--vib);display:block;margin-bottom:4px;line-height:1;}
 .done-sub{color:var(--muted);font-size:15px;margin-bottom:.5rem;}
@@ -174,7 +179,7 @@ h1 em{font-style:italic;color:var(--vib);}
 .kb-hint span{display:flex;align-items:center;gap:5px;}
 .key{background:var(--surface2);border:0.5px solid var(--border2);border-radius:4px;padding:1px 7px;font-size:11px;color:var(--text);}
 
-@media(max-width:500px){.stats{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.stats{grid-template-columns:repeat(2,1fr);}.bottom-btns{flex-direction:column;}}
 </style>
 </head>
 <body>
@@ -185,7 +190,7 @@ h1 em{font-style:italic;color:var(--vib);}
   </div>
 
   <div class="exam-note">
-    <strong>Multiple choice — exam style.</strong> Pick the best answer. Correct answers stay green; wrong picks show red and reveal the right answer. Based on actual Prof. Nevai exam questions.
+    <strong>Multiple choice — exam style.</strong> Pick the best answer. After answering, click <strong>Ask Tutor</strong> to chat with an AI that explains anything further. Based on actual Prof. Nevai exam questions.
   </div>
 
   <div class="stats">
@@ -224,294 +229,307 @@ h1 em{font-style:italic;color:var(--vib);}
     <div class="explanation-label">Explanation</div>
     <div class="explanation-text" id="exp-text"></div>
   </div>
-  <button class="next-btn" id="next-btn" onclick="nextQ()">Next question →</button>
+  <div class="bottom-btns">
+    <button class="next-btn" id="next-btn" onclick="nextQ()">Next question →</button>
+    <button class="ask-btn" id="ask-btn" onclick="openTutor()">✦ Ask Tutor</button>
+  </div>
 
   <div class="kb-hint" id="kb-hint">
     <span><span class="key">A</span><span class="key">B</span><span class="key">C</span><span class="key">D</span> Pick answer</span>
     <span><span class="key">Enter</span> Next</span>
+    <span><span class="key">T</span> Ask Tutor</span>
+  </div>
+</div>
+
+<!-- AI TUTOR PANEL -->
+<div class="tutor-overlay" id="tutor-overlay" onclick="overlayClick(event)">
+  <div class="tutor-panel">
+    <div class="tutor-header">
+      <div class="tutor-title">
+        <div class="tutor-title-icon">✦</div>
+        AI Tutor
+      </div>
+      <button class="tutor-close" onclick="closeTutor()">×</button>
+    </div>
+    <div class="tutor-context" id="tutor-context"></div>
+    <div class="tutor-messages" id="tutor-messages"></div>
+    <div class="tutor-input-row" id="tutor-input-row">
+      <textarea class="tutor-input" id="tutor-input" rows="1" placeholder="Ask anything about this question..." onkeydown="inputKeydown(event)"></textarea>
+      <button class="tutor-send" id="tutor-send" onclick="sendMessage()">Send</button>
+    </div>
+    <div class="api-setup" id="api-setup" style="display:none;">
+      <h3>Connect your API key</h3>
+      <p>The AI Tutor uses the Claude API. Enter your Anthropic API key below — it's stored only in your browser and never sent anywhere except Anthropic's servers.<br><br>Get a free key at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a></p>
+      <input class="api-key-input" id="api-key-input" type="password" placeholder="sk-ant-..." />
+      <br>
+      <button class="api-save-btn" onclick="saveApiKey()">Save &amp; Start</button>
+      <p class="api-note">Key is saved in localStorage — only you can see it.</p>
+    </div>
   </div>
 </div>
 
 <script>
-const LETTERS = ['A','B','C','D'];
+const LETTERS=['A','B','C','D'];
+let apiKey=localStorage.getItem('claude_api_key')||'';
+let chatHistory=[];
+let currentQ=null;
 
-const Q = [
-/* ══ SYSTEMS & PHASE PLANE ══ */
+/* ══ QUESTIONS ══ */
+const Q=[
 {t:"systems",d:"medium",tp:"setup",exam:true,
 q:"Write x′ = 3x − 2y, y′ = 2x + 3y as a matrix DE. What is the matrix A?",
 choices:["A = [[3,2],[−2,3]]","A = [[3,−2],[2,3]]","A = [[−2,3],[3,2]]","A = [[2,3],[3,−2]]"],
 correct:1,
-exp:`The top row of A comes from the x′ equation: coefficient of x is 3, coefficient of y is −2. Bottom row from y′: coefficient of x is 2, coefficient of y is 3. So <span class="f">A = [[3,−2],[2,3]]</span>.
-<div class="warn">⚠️ Common mistake: swapping rows or getting signs wrong. Always read row by row from each equation.</div>`},
+exp:`The top row of A comes from x′: coefficient of x is 3, coefficient of y is −2. Bottom row from y′: coefficient of x is 2, coefficient of y is 3. So <span class="f">A = [[3,−2],[2,3]]</span>.
+<div class="warn">⚠️ Common mistake: swapping rows or getting signs wrong. Read row by row from each equation.</div>`},
 
 {t:"systems",d:"medium",tp:"formula",exam:true,
-q:"For the matrix A = [[3,−2],[2,3]], what is the characteristic equation for the eigenvalues?",
+q:"For A = [[3,−2],[2,3]], what is the characteristic equation for the eigenvalues?",
 choices:["λ² − 6λ + 13 = 0","λ² + 6λ + 13 = 0","λ² − 6λ − 13 = 0","λ² − 13λ + 6 = 0"],
 correct:0,
-exp:`tr(A) = 3+3 = 6, det(A) = (3)(3)−(−2)(2) = 9+4 = 13. Characteristic equation: <span class="f">λ² − tr(A)λ + det(A) = 0</span> → <span class="f">λ² − 6λ + 13 = 0</span>.
-<div class="cx">🔗 Memory: always trace − trace·λ + det. The signs are (−tr, +det).</div>`},
+exp:`tr(A) = 6, det(A) = 9+4 = 13. Characteristic equation: <span class="f">λ² − tr(A)λ + det(A) = 0</span> → <span class="f">λ² − 6λ + 13 = 0</span>.
+<div class="cx">🔗 Memory: always (λ² − trace·λ + det). Signs are always (−tr, +det).</div>`},
 
 {t:"systems",d:"hard",tp:"setup",exam:true,
 q:"What are the eigenvalues of A = [[3,−2],[2,3]]?",
 choices:["λ = 3 ± 2i","λ = −3 ± 2i","λ = 2 ± 3i","λ = 6 ± 2i"],
 correct:0,
-exp:`From λ² − 6λ + 13 = 0: discriminant = 36 − 52 = −16. So <span class="f">λ = (6 ± √(−16))/2 = (6 ± 4i)/2 = 3 ± 2i</span>. Complex with positive real part → unstable spiral (trajectories spiral outward).
-<div class="warn">⚠️ This was the actual exam question worth 26 points. Don't forget to simplify √(−16) = 4i, not 2i.</div>`},
+exp:`Discriminant = 36 − 52 = −16. So <span class="f">λ = (6 ± 4i)/2 = 3 ± 2i</span>. Positive real part → unstable spiral.
+<div class="warn">⚠️ √(−16) = 4i, not 2i. Simplify carefully.</div>`},
 
 {t:"systems",d:"medium",tp:"concept",exam:true,
-q:"A 2×2 system has eigenvalues λ = 3 ± 2i. What type of equilibrium is the origin?",
+q:"Eigenvalues λ = 3 ± 2i. What type of equilibrium is the origin?",
 choices:["Stable spiral (inward)","Unstable spiral (outward)","Saddle point","Center (closed orbits)"],
 correct:1,
-exp:`Eigenvalues α ± βi where α = 3 > 0 → <strong>unstable spiral</strong>. The real part determines growth/decay: α > 0 means e^{αt} grows → trajectories spiral outward away from origin. If α < 0: stable spiral inward. If α = 0: center with closed orbits.`},
+exp:`α = 3 > 0 → <strong>unstable spiral</strong>. The e^{αt} factor grows, so trajectories spiral outward. If α < 0: stable spiral. If α = 0: center.`},
 
 {t:"systems",d:"medium",tp:"concept",exam:true,
-q:"Which condition on eigenvalues guarantees a saddle point for a 2×2 linear system?",
-choices:["Both eigenvalues are purely imaginary","Both eigenvalues are real and negative","The eigenvalues are real with opposite signs","Both eigenvalues are complex with negative real part"],
+q:"Which eigenvalue condition guarantees a saddle point?",
+choices:["Both purely imaginary","Both real and negative","Real with opposite signs","Complex with negative real part"],
 correct:2,
-exp:`A saddle point requires two real eigenvalues with <strong>opposite signs</strong> (one positive, one negative). Stable manifold along the negative eigenvector direction, unstable manifold along the positive one. Saddles are always unstable — any trajectory not exactly on the stable manifold will eventually flee.
-<div class="cx">🔗 Quick check: det(A) < 0 → saddle. Since det(A) = λ₁λ₂, opposite signs give negative product.</div>`},
+exp:`Saddle: two real eigenvalues with opposite signs. One direction stable (decays in), one unstable (grows out). Quick check: det(A) < 0 → saddle, since det = λ₁λ₂ < 0 requires opposite signs.`},
 
 {t:"systems",d:"medium",tp:"concept",exam:true,
-q:"True or False: An isocline of a DE always represents the trajectory of one of its solutions.",
-choices:["True — isoclines are special solution curves","False — isoclines show where slope = constant, not a solution","True — isoclines and trajectories are the same thing","False — isoclines only exist for linear equations"],
+q:"True or False: An isocline always represents a trajectory of a solution.",
+choices:["True — isoclines are special solution curves","False — isoclines show constant slope, not a solution path","True — for linear equations only","False — isoclines only work for autonomous systems"],
 correct:1,
-exp:`<strong>FALSE.</strong> An isocline for slope λ is the set of all points (x,v) where dv/dx = λ — a geometric locus of equal slope. Trajectories cross isoclines at the correct angle, but the isocline itself is generally not a solution. (This was a True/False on your exam — 1C.)`},
+exp:`<strong>FALSE.</strong> An isocline for slope λ is the locus of points where dv/dx = λ. Trajectories pass through isoclines at the right angle but the isocline is not itself a solution. (Your exam — 1C, answer was False.)`},
 
 {t:"systems",d:"medium",tp:"concept",exam:true,
-q:"True or False: The solution of a damped spring-mass system meets its envelope at points of maximum/minimum displacement.",
-choices:["True — at extrema, cosine = ±1 so the solution touches the envelope","False — the solution never actually touches the envelope","True — but only for overdamped systems","False — this only holds for undamped systems"],
+q:"True or False: A damped spring solution meets its envelope at points of maximum/minimum displacement.",
+choices:["True — cosine = ±1 at extrema, which is where envelope is touched","False — solution never touches the envelope","True — only for critically damped systems","False — only for undamped systems"],
 correct:0,
-exp:`<strong>TRUE.</strong> For x(t) = Re^{−αt}cos(ω_d t + φ), envelopes are ±Re^{−αt}. The solution touches the envelope when cos = ±1, which occurs at local maxima/minima of displacement (where x′ = 0). (Exam 1A — you got this right!)`},
+exp:`<strong>TRUE.</strong> x(t) = Re^{−αt}cos(ω_d t + φ) touches ±Re^{−αt} when cos = ±1, which is exactly at local max/min of displacement (x′ = 0). (Exam 1A — you got this right!)`},
 
 {t:"systems",d:"hard",tp:"setup",exam:true,
 q:"For x″ + 4x′ + 8x = 0, what is the isocline for slope λ = 0?",
-choices:["v = 0 (the x-axis)","x = 0 (the v-axis)","v = −2x","v = −x"],
+choices:["v = 0","x = 0","v = −2x","v = −x"],
 correct:2,
-exp:`Let v = x′. System: x′ = v, v′ = −8x − 4v. Slope dv/dx = (−8x−4v)/v = λ. For λ = 0: −8x − 4v = 0 → <span class="f">v = −2x</span>. This is a line through the origin with slope −2 in the (x,v) phase plane.
-<div class="warn">⚠️ λ = 0 isocline is where trajectories are horizontal (dv/dx = 0), not where v = 0.</div>`},
+exp:`System: x′=v, v′=−8x−4v. Slope dv/dx = (−8x−4v)/v = 0 → −8x−4v = 0 → <span class="f">v = −2x</span>.
+<div class="warn">⚠️ λ=0 means trajectories are horizontal there, NOT that v=0.</div>`},
 
 {t:"systems",d:"hard",tp:"setup",exam:true,
 q:"For x″ + 4x′ + 8x = 0, what is the isocline for slope λ = −4?",
-choices:["v = −2x","v = −x","x = 0 (the v-axis)","v = 0 (the x-axis)"],
+choices:["v = −2x","v = −x","x = 0 (v-axis)","v = 0 (x-axis)"],
 correct:2,
-exp:`For λ = −4: (−8x−4v)/v = −4 → −8x − 4v = −4v → −8x = 0 → <span class="f">x = 0</span>. The isocline is the v-axis (vertical axis). This is a special case because λ = −4 makes the denominator approach a degenerate form.
-<div class="warn">⚠️ λ = −4 gives x = 0, not a slanted line. Always check for these special cases.</div>`},
+exp:`(−8x−4v)/v = −4 → −8x−4v = −4v → −8x = 0 → <span class="f">x = 0</span>. Special case: denominator issue makes this the vertical axis.
+<div class="warn">⚠️ Always check for special cases when λ makes the algebra degenerate.</div>`},
 
 {t:"systems",d:"medium",tp:"concept",exam:true,
-q:"For the nonlinear pendulum θ″ + sinθ = 0, what are the stable equilibria in the range 0 ≤ θ ≤ 3π?",
+q:"For θ″ + sinθ = 0, which equilibria in 0 ≤ θ ≤ 3π are STABLE?",
 choices:["θ = 0, π, 2π, 3π","θ = π, 3π","θ = 0, 2π","θ = π/2, 3π/2"],
 correct:2,
-exp:`Equilibria where sin θ = 0: θ = 0, π, 2π, 3π. Stability: even multiples of π (θ = 0, 2π) are <strong>stable centers</strong>; odd multiples (θ = π, 3π) are <strong>unstable saddles</strong>. The pendulum at rest pointing down (θ = 0, 2π) is stable; pointing up (θ = π, 3π) is unstable.`},
+exp:`sin θ = 0 at θ = 0, π, 2π, 3π. Even multiples of π → stable centers (pendulum hanging down). Odd multiples → unstable saddles (pendulum pointing up).`},
 
 {t:"systems",d:"medium",tp:"concept",
-q:"What does the separatrix of the nonlinear pendulum represent physically?",
-choices:["The set of all unstable equilibria","The boundary between rocking motion and full rotation","A trajectory that reaches equilibrium in finite time","The line where angular velocity equals zero"],
+q:"What does the separatrix of the nonlinear pendulum physically separate?",
+choices:["Stable from unstable equilibria","Rocking motion (libration) from full rotation","Clockwise from counterclockwise orbits","Damped from undamped trajectories"],
 correct:1,
-exp:`The separatrix is the level curve E = 1 (for the normalized pendulum with energy E = ½(θ′)² − cosθ). It separates two qualitatively different behaviors: <strong>libration</strong> (E < 1, pendulum rocks back and forth) and <strong>rotation</strong> (E > 1, pendulum goes over the top repeatedly). The separatrix itself asymptotically approaches the unstable equilibria.`},
+exp:`The separatrix (energy level E = 1) separates libration (E < 1, pendulum rocks) from rotation (E > 1, pendulum goes all the way over). It asymptotically approaches the unstable saddle equilibria and takes infinite time to reach them.`},
 
 {t:"systems",d:"easy",tp:"concept",
-q:"What does it mean to convert x″ + f(x, x′) = 0 into a first-order system? What new variable do you introduce?",
-choices:["Let u = x″ and write a system in (x, u)","Let v = x′ and write x′ = v, v′ = −f(x,v)","Let v = x + x′ and solve for v","Divide the whole equation by x′"],
+q:"How do you convert x″ + f(x,x′) = 0 to a first-order system?",
+choices:["Let u = x″","Let v = x′, write x′=v and v′=−f(x,v)","Divide by x′","Let v = x + x′"],
 correct:1,
-exp:`Introduce <span class="f">v = x′</span>. Then x″ = v′. The second-order ODE x″ = −f(x, x′) becomes the first-order system: <span class="f">x′ = v</span>, <span class="f">v′ = −f(x, v)</span>. This is the standard conversion for phase plane analysis. Equilibria: set both x′ = 0 and v′ = 0.
-<div class="warn">⚠️ This conversion is required before you can find isoclines or sketch phase portraits.</div>`},
+exp:`Introduce <span class="f">v = x′</span>. Then x″ = v′. The system becomes: <span class="f">x′ = v</span>, <span class="f">v′ = −f(x,v)</span>. Essential for phase plane analysis and isocline problems.`},
 
 {t:"systems",d:"medium",tp:"concept",
-q:"A 2×2 system has trace(A) = −5 and det(A) = 6. What type of equilibrium is the origin?",
-choices:["Saddle point","Unstable node","Stable node or stable spiral","Center"],
+q:"A system has trace(A) = −5 and det(A) = 6. What type of equilibrium?",
+choices:["Saddle","Unstable node","Stable node or stable spiral","Center"],
 correct:2,
-exp:`Eigenvalues satisfy λ² + 5λ + 6 = 0 → λ = −2, −3. Both real and negative → <strong>stable node</strong>. Check: trace < 0 and det > 0 → stable. det > 0 rules out saddle. No complex part → node not spiral. All trajectories approach the origin without oscillating.
-<div class="cx">🔗 Shortcut: trace < 0 AND det > 0 → stable (node or spiral). det < 0 → saddle. trace > 0 → unstable.</div>`},
+exp:`λ² + 5λ + 6 = 0 → λ = −2, −3. Both real negative → <strong>stable node</strong>. Shortcut: trace < 0 AND det > 0 → stable. det > 0 rules out saddle.`},
 
-/* ══ VIBRATIONS ══ */
 {t:"vibrations",d:"easy",tp:"concept",exam:true,
-q:"In the equation mx″ + kx = 0, what is the restoring force?",
-choices:["f(x) = kx","f(x) = −kx","f(x) = mx″","f(x) = −mx″"],
+q:"In mx″ + kx = 0, what is the restoring force?",
+choices:["f(x) = kx","f(x) = −kx","f(x) = mx″","f(x) = m/k"],
 correct:1,
-exp:`Rewrite as mx″ = −kx. By Newton's law F = ma = mx″, so the net force is <span class="f">f(x) = −kx</span>. This is Hooke's law — the restoring force is proportional to displacement and always directed back toward equilibrium (negative sign). (Exam True/False 1B — TRUE.)`},
+exp:`Rewrite: mx″ = −kx. Force = ma = mx″ → <span class="f">F = −kx</span>. Hooke's law: proportional to displacement, directed toward equilibrium. (Exam 1B — TRUE.)`},
 
 {t:"vibrations",d:"medium",tp:"derivation",exam:true,
-q:"When deriving the DE for a spring-mass system with friction, why does the friction term have a negative sign?",
-choices:["Because friction acts in the same direction as displacement","Because friction opposes velocity, so F_friction = −c·x′","Because the spring constant k is always positive","Because Newton's law requires all forces to be negative"],
+q:"Why does friction appear as −cx′ (negative) in the spring equation?",
+choices:["Friction acts in same direction as displacement","Friction opposes velocity, so it's always opposite to x′","The spring constant forces it negative","Newton's law requires negative forces"],
 correct:1,
-exp:`Friction opposes motion. If the mass moves in the positive direction (x′ > 0), friction acts in the negative direction: <span class="f">F_friction = −c·x′</span> where c > 0. If moving negatively (x′ < 0), friction acts positively. The sign automatically comes out right with −c·x′. The full equation: <span class="f">mx″ = −kx − cx′</span> → <span class="f">mx″ + cx′ + kx = 0</span>.
-<div class="warn">⚠️ This was an explicit derivation question on your exam (Image 4). Getting the friction sign wrong loses all credit.</div>`},
+exp:`Friction opposes motion. Moving right (x′ > 0): friction acts left → −cx′ is negative. Moving left (x′ < 0): −cx′ is positive (rightward friction). The sign is automatic. Full equation: <span class="f">mx″ + cx′ + kx = 0</span>.
+<div class="warn">⚠️ Exam derivation question. Wrong friction sign = zero credit.</div>`},
 
 {t:"vibrations",d:"medium",tp:"concept",exam:true,
-q:"What are the three damping regimes for mx″ + cx′ + kx = 0, classified by the discriminant c² − 4mk?",
-choices:["Overdamped (> 0), critically damped (= 0), underdamped (< 0)","Underdamped (> 0), critically damped (= 0), overdamped (< 0)","Stable (> 0), neutral (= 0), unstable (< 0)","Oscillating (> 0), decaying (= 0), growing (< 0)"],
+q:"What are the three damping regimes for mx″ + cx′ + kx = 0?",
+choices:["Overdamped (c²>4mk), critically damped (c²=4mk), underdamped (c²<4mk)","Underdamped (c²>4mk), critically damped (c²=4mk), overdamped (c²<4mk)","Stable (c>0), neutral (c=0), unstable (c<0)","Fast (large c), medium, slow (small c)"],
 correct:0,
-exp:`Discriminant Δ = c² − 4mk:<br>
-• Δ > 0: two real roots → <strong>overdamped</strong> (slow exponential decay, no oscillation)<br>
-• Δ = 0: repeated real root → <strong>critically damped</strong> (fastest return without oscillating, c = 2√(mk))<br>
-• Δ < 0: complex roots → <strong>underdamped</strong> (oscillates with decaying amplitude)
-<div class="rw">🚗 Car shock absorbers aim for near critical damping — settle fast without bouncing.</div>`},
+exp:`Discriminant Δ = c² − 4mk: Δ>0 → overdamped (no oscillation). Δ=0 → critically damped (fastest decay, c=2√(mk)). Δ<0 → underdamped (oscillates with decaying amplitude).
+<div class="rw">🚗 Car shock absorbers target near critical damping.</div>`},
 
 {t:"vibrations",d:"hard",tp:"derivation",exam:true,
-q:"For 4x″ + 15x⁴ = 0, which step correctly begins the energy derivation?",
-choices:["Divide both sides by x","Multiply both sides by x′","Integrate both sides with respect to x","Substitute x = e^{rt}"],
+q:"For 4x″ + 15x⁴ = 0, what is the FIRST step of the energy derivation?",
+choices:["Divide both sides by x","Multiply both sides by x′","Integrate both sides w.r.t. x","Substitute x = e^{rt}"],
 correct:1,
-exp:`Multiply both sides by x′: <span class="f">4x″·x′ + 15x⁴·x′ = 0</span>. Now recognize: 4x″x′ = d/dt[2(x′)²] and 15x⁴x′ = d/dt[3x⁵]. So d/dt[2(x′)² + 3x⁵] = 0 → energy E = 2(x′)² + 3x⁵ = constant.
-<div class="warn">⚠️ This is the key trick for ALL energy derivations: multiply by x′ first. It converts x″ into d/dt[½(x′)²] every time.</div>`},
+exp:`Multiply by x′: <span class="f">4x″x′ + 15x⁴x′ = 0</span>. Recognize d/dt[2(x′)²] + d/dt[3x⁵] = 0 → E = 2(x′)² + 3x⁵ = const.
+<div class="warn">⚠️ Multiply by x′ FIRST — always. It converts x″ into d/dt[½(x′)²] every time.</div>`},
 
 {t:"vibrations",d:"hard",tp:"setup",exam:true,
-q:"For 4x″ + 15x⁴ = 0 with x(0) = 2, x′(0) = 7, what is the total energy E?",
+q:"For 4x″ + 15x⁴ = 0, x(0) = 2, x′(0) = 7, what is E?",
 choices:["E = 194","E = 98","E = 96","E = 290"],
 correct:0,
-exp:`Energy: <span class="f">E = 2(x′)² + 3x⁵</span>. At t = 0: <span class="f">E = 2(7²) + 3(2⁵) = 2(49) + 3(32) = 98 + 96 = 194</span>. Since energy is conserved (no damping), E = 194 for all t ≥ 0.`},
+exp:`E = 2(x′)² + 3x⁵. At t=0: <span class="f">E = 2(49) + 3(32) = 98 + 96 = 194</span>. Conserved for all t.`},
 
 {t:"vibrations",d:"hard",tp:"concept",exam:true,
-q:"Given E = 2(x′)² + 3x⁵ = 194 with x ≥ 0, how do you find maximum displacement?",
-choices:["Set x = 0 and solve for x′","Set x′ = 0 and solve for x","Set E = 0 and solve for x","Differentiate E with respect to t"],
+q:"Given E = 2(x′)² + 3x⁵ = 194, x ≥ 0, how do you find maximum displacement?",
+choices:["Set x = 0, solve for x′","Set x′ = 0, solve for x","Set E = 0, solve","Differentiate E w.r.t. t"],
 correct:1,
-exp:`At maximum displacement, the mass is momentarily at rest: <span class="f">x′ = 0</span>. So: 3x⁵ = 194 → <span class="f">x_max = (194/3)^{1/5}</span>. All energy is potential at the turning point — kinetic energy is zero.
-<div class="cx">🔗 General principle: at turning points KE = 0, all energy is PE. Set x′ = 0 in the energy equation and solve.</div>`},
+exp:`At maximum displacement, mass is momentarily at rest: x′ = 0. So <span class="f">3x⁵ = 194 → x = (194/3)^{1/5}</span>. All energy is potential at turning points.`},
 
 {t:"vibrations",d:"medium",tp:"setup",exam:true,
-q:"The nonlinear ODE x″ + (x−1)(x−3)(x−5)(x−7) = 0. Which equilibria are STABLE?",
-choices:["x* = 1 and x* = 5","x* = 3 and x* = 7","x* = 1 and x* = 3","x* = 5 and x* = 7"],
+q:"For x″ + (x−1)(x−3)(x−5)(x−7) = 0, which equilibria are STABLE?",
+choices:["x* = 1 and x* = 5","x* = 3 and x* = 7","x* = 1, 3, 5, 7 all stable","x* = 1 and x* = 7"],
 correct:1,
-exp:`Equilibria: x* = 1, 3, 5, 7. For stability, compute f′(x*) where f(x) = −(x−1)(x−3)(x−5)(x−7). Stable if f′(x*) < 0:<br>
-• f′(1) > 0 → unstable<br>
-• f′(3) < 0 → <strong>stable</strong><br>
-• f′(5) > 0 → unstable<br>
-• f′(7) < 0 → <strong>stable</strong><br>
-Stable equilibria: <span class="f">x* = 3 and x* = 7</span>. (Exam Image 3 — 3 pts)`},
+exp:`f′(x*) < 0 → stable. Evaluating: f′(1) > 0 (unstable), f′(3) < 0 (stable), f′(5) > 0 (unstable), f′(7) < 0 (stable). Stable: <span class="f">x* = 3 and x* = 7</span>. (Exam Image 3)`},
 
 {t:"vibrations",d:"hard",tp:"setup",exam:true,
-q:"Near x* = 3 for x″ + (x−1)(x−3)(x−5)(x−7) = 0, what is the linearized circular frequency ω?",
+q:"Near x* = 3 for x″ + (x−1)(x−3)(x−5)(x−7) = 0, circular frequency ω = ?",
 choices:["ω = 2","ω = 4","ω = 8","ω = 16"],
 correct:1,
-exp:`Let u = x − 3. Linearize f(x) = −(x−1)(x−3)(x−5)(x−7) near x* = 3. Only the term where (x−3) has been differentiated contributes at x = 3: f′(3) = −(2)(−2)(−4) = −16. Linearized: u″ = −16u → u″ + 16u = 0. Circular frequency: <span class="f">ω = √16 = 4 rad/s</span>. (Exam Image 3 — 1E)`},
+exp:`Linearize: f′(3) = −(2)(−2)(−4) = −16. Linearized: u″ + 16u = 0. <span class="f">ω = √16 = 4 rad/s</span>. (Exam 1E)`},
 
 {t:"vibrations",d:"medium",tp:"setup",exam:true,
-q:"For the nonlinear pendulum θ(0) = π/2, Ω(0) = −√(g/L), what is the total energy E = ½Ω² − (g/L)cosθ?",
+q:"Pendulum: θ(0)=π/2, Ω(0)=−√(g/L). Total energy E = ½Ω² − (g/L)cosθ = ?",
 choices:["E = g/L","E = g/(2L)","E = 2g/L","E = 0"],
 correct:1,
-exp:`At t = 0: <span class="f">E = ½(−√(g/L))² − (g/L)cos(π/2) = ½(g/L) − (g/L)(0) = g/(2L)</span>. Energy is conserved (no friction), so E = g/(2L) for all t ≥ 0. (Exam Image 3 — 1F, answer was g/2 for L=1)`},
+exp:`E = ½(g/L) − (g/L)cos(π/2) = g/(2L) − 0 = <span class="f">g/(2L)</span>. Conserved for all t. (Exam 1F)`},
 
 {t:"vibrations",d:"medium",tp:"setup",exam:true,
-q:"A spaceship between Earth (mass M at x=0) and Moon (mass N at x=d). What is the equilibrium position?",
-choices:["x* = d√N/(√M + √N)","x* = d√M/(√M + √N)","x* = d·M/(M + N)","x* = d/2"],
+q:"Earth-Moon spaceship equilibrium position x* (Earth at 0, Moon at d, masses M and N)?",
+choices:["x* = d√N/(√M+√N)","x* = d√M/(√M+√N)","x* = dM/(M+N)","x* = d/2"],
 correct:1,
-exp:`At equilibrium x″ = 0: <span class="f">GM/x² = GN/(d−x)²</span>. Taking positive square roots (since 0 < x < d): <span class="f">√M/x = √N/(d−x)</span> → √M(d−x) = √N·x → <span class="f">x* = d√M/(√M + √N)</span>. This is the Lagrange point where gravitational forces balance. (Exam Image 6 — 20 pt question)`},
+exp:`Set gravitational forces equal: √M/x = √N/(d−x) → <span class="f">x* = d√M/(√M+√N)</span>. The Lagrange point where forces balance. (Exam Image 6 — 20 pts)`},
 
 {t:"vibrations",d:"medium",tp:"derivation",exam:true,
-q:"For the Earth-Moon spaceship problem, why does the Earth's gravitational force appear as NEGATIVE in the equation of motion?",
-choices:["Because gravity is always negative","Because Earth is at x=0 and pulls the spaceship toward smaller x","Because the Moon's gravity is stronger","Because G is a negative constant"],
+q:"Why is Earth's gravitational force NEGATIVE in the spaceship equation mx″ = −GMm/x² + GNm/(d−x)²?",
+choices:["G is negative","Earth is at x=0 and pulls the ship toward smaller x","Moon's gravity is stronger","Mass m cancels out"],
 correct:1,
-exp:`Earth sits at x = 0. The spaceship at position x > 0 is pulled toward Earth — in the negative x direction. So <span class="f">F_Earth = −GMm/x²</span> (negative). Moon at x = d pulls the spaceship toward larger x (positive direction): <span class="f">F_Moon = +GNm/(d−x)²</span>. Total: <span class="f">mx″ = −GMm/x² + GNm/(d−x)²</span>.
-<div class="warn">⚠️ Direction of forces is the most common source of errors on this type of problem. Always draw a diagram first.</div>`},
+exp:`Earth at x=0 pulls the ship at x>0 toward the left (toward x=0 = smaller x) → negative direction. Moon at x=d pulls toward larger x → positive. <span class="f">F_Earth = −GMm/x²</span>, <span class="f">F_Moon = +GNm/(d−x)²</span>.
+<div class="warn">⚠️ Always draw a diagram and label force directions before writing equations.</div>`},
 
 {t:"vibrations",d:"easy",tp:"concept",
-q:"What is the natural frequency ω₀ of the simple harmonic oscillator mx″ + kx = 0?",
+q:"Natural frequency of mx″ + kx = 0?",
 choices:["ω₀ = k/m","ω₀ = √(m/k)","ω₀ = √(k/m)","ω₀ = 2π√(m/k)"],
 correct:2,
-exp:`The SHO equation mx″ + kx = 0 has characteristic equation mλ² + k = 0 → λ = ±i√(k/m). So <span class="f">ω₀ = √(k/m)</span>. General solution: x(t) = A cos(ω₀t) + B sin(ω₀t). Period: T = 2π/ω₀ = 2π√(m/k).`},
+exp:`Characteristic equation: mλ² + k = 0 → λ = ±i√(k/m). So <span class="f">ω₀ = √(k/m)</span>. Period: T = 2π/ω₀.`},
 
 {t:"vibrations",d:"medium",tp:"formula",exam:true,
-q:"For x(t) = 4√3 cos(7t) + 4 sin(7t), what is the amplitude A in the form A sin(7t + φ₀)?",
+q:"For x(t) = 4√3 cos(7t) + 4 sin(7t), amplitude A in form A sin(7t + φ₀)?",
 choices:["A = 4","A = 4√3","A = 8","A = 4√7"],
 correct:2,
-exp:`Amplitude: <span class="f">A = √((4√3)² + 4²) = √(48 + 16) = √64 = 8</span>. The phase: tanφ₀ = 4√3/4 = √3 → φ₀ = π/3. So x(t) = 8 sin(7t + π/3). (Exam Image 4 — Question 1G, A = 8)
-<div class="warn">⚠️ Amplitude is always the square root of the sum of squares of both coefficients.</div>`},
+exp:`<span class="f">A = √((4√3)² + 4²) = √(48+16) = √64 = 8</span>. Phase: tanφ₀ = √3 → φ₀ = π/3. (Exam 1G)`},
 
-/* ══ POPULATION ══ */
 {t:"population",d:"easy",tp:"concept",
-q:"What are the equilibria of the logistic equation dP/dt = rP(1 − P/K), and which is stable?",
-choices:["P* = 0 (stable) and P* = K (unstable)","P* = K (stable) only","P* = 0 (unstable) and P* = K (stable)","P* = K/2 (stable) and P* = K (unstable)"],
-correct:2,
-exp:`Setting dP/dt = 0: P* = 0 or P* = K. Stability via f′(P*) where f = rP(1−P/K): f′(0) = r > 0 → <strong>unstable</strong>. f′(K) = −r < 0 → <strong>stable</strong>. For any 0 < P(0) < K, the population grows toward K following an S-shaped sigmoid curve.`},
+q:"Which equilibrium of dP/dt = rP(1−P/K) is stable?",
+choices:["P* = 0","P* = K","P* = K/2","Both P*=0 and P*=K"],
+correct:1,
+exp:`f′(0) = r > 0 → unstable. f′(K) = −r < 0 → <strong>stable</strong>. Any 0 < P(0) < K grows to K along a sigmoid curve.`},
 
 {t:"population",d:"medium",tp:"derivation",exam:true,
-q:"For dN/dt = R(T(t))N, what is the key first step to show N(t) = N₀exp[r(t)t]?",
-choices:["Multiply both sides by N","Separate variables: (1/N)dN = R(T(t))dt","Substitute N = e^{rt}","Take the derivative of both sides"],
+q:"For dN/dt = R(T(t))N, first step to show N = N₀exp[r(t)t]?",
+choices:["Multiply both sides by N","Separate variables: (1/N)dN = R(T(t))dt","Substitute N = e^{rt}","Differentiate both sides"],
 correct:1,
-exp:`Separate: <span class="f">(1/N)dN = R(T(t))dt</span>. Then integrate both sides from 0 to t: left side gives ln(N(t)/N₀), right side gives ∫₀ᵗ R(T(s))ds = t·r(t) by definition of r(t). Exponentiating: <span class="f">N(t) = N₀e^{r(t)t}</span>.
-<div class="warn">⚠️ Exam (Image 9 — 14 pts): Use dummy variable s inside the integral, t as the upper limit. Mixing these up was the most common error.</div>`},
+exp:`Separate: <span class="f">(1/N)dN = R(T(t))dt</span>. Integrate 0 to t: ln(N/N₀) = ∫₀ᵗR(T(s))ds = t·r(t). Exponentiate: N = N₀e^{r(t)t}.
+<div class="warn">⚠️ Exam (Image 9 — 14 pts): Use dummy variable s inside the integral, t as upper limit.</div>`},
 
 {t:"population",d:"medium",tp:"concept",
-q:"What is maximum sustainable yield (MSY) for dP/dt = rP(1−P/K) − h?",
-choices:["MSY = rK, achieved at P = K","MSY = rK/4, achieved at P = K/2","MSY = rK/2, achieved at P = K/4","MSY = r/K, achieved at P = K"],
+q:"Maximum sustainable yield for dP/dt = rP(1−P/K) − h?",
+choices:["MSY = rK at P=K","MSY = rK/4 at P=K/2","MSY = rK/2 at P=K/4","MSY = r/K at P=K"],
 correct:1,
-exp:`The logistic growth rate rP(1−P/K) is maximized at P = K/2 with value rK/4. So <span class="f">MSY = rK/4</span>. If h > rK/4, no positive equilibrium exists and population collapses to zero.
-<div class="rw">🐟 North Atlantic cod collapsed in the 1990s because harvest rates exceeded MSY. The fishery still hasn't fully recovered.</div>`},
+exp:`Growth rate rP(1−P/K) maximized at P=K/2 with value <span class="f">rK/4</span>. Harvesting above this → no positive equilibrium → population collapse.
+<div class="rw">🐟 North Atlantic cod collapsed in 1990s: harvest exceeded MSY.</div>`},
 
 {t:"population",d:"medium",tp:"concept",
-q:"What type of bifurcation occurs in dP/dt = rP(1−P/K) − h as h increases through rK/4?",
-choices:["Pitchfork bifurcation","Hopf bifurcation","Saddle-node (fold) bifurcation","Transcritical bifurcation"],
+q:"What bifurcation occurs in dP/dt = rP(1−P/K) − h as h exceeds rK/4?",
+choices:["Pitchfork","Hopf","Saddle-node (fold)","Transcritical"],
 correct:2,
-exp:`As h increases toward rK/4, two equilibria (one stable, one unstable) approach each other. At h = rK/4 they collide and disappear. This is a <strong>saddle-node (fold) bifurcation</strong>. For h > rK/4: no positive equilibria → population collapses. The bifurcation diagram shows P* vs h as an inverted parabola.`},
+exp:`Two equilibria (stable + unstable) approach each other as h → rK/4, collide, and disappear. This is a <strong>saddle-node bifurcation</strong>. For h > rK/4: population inevitably crashes to zero.`},
 
 {t:"population",d:"hard",tp:"concept",
-q:"In the Lotka-Volterra model, what do purely imaginary eigenvalues at the interior equilibrium imply?",
-choices:["The equilibrium is unstable","Populations spiral inward to coexistence","Populations oscillate in closed periodic orbits","The model is invalid"],
+q:"Purely imaginary eigenvalues at the Lotka-Volterra interior equilibrium imply?",
+choices:["Unstable equilibrium","Populations spiral to coexistence","Closed periodic orbits (perpetual oscillation)","Model is invalid"],
 correct:2,
-exp:`Purely imaginary eigenvalues ±iβ (zero real part) → <strong>center</strong> in the linearization. For Lotka-Volterra, the conserved quantity H(x,y) = dx − c ln x + by − a ln y = const confirms the nonlinear system also has closed orbits. Predator and prey populations oscillate perpetually in synchronized cycles — neither grows nor decays to zero.`},
+exp:`Purely imaginary eigenvalues → center in linearization. The conserved quantity H(x,y) confirms nonlinear system also has closed orbits. Predator and prey oscillate perpetually in synchronized cycles.`},
 
 {t:"population",d:"medium",tp:"concept",
-q:"What is the Allee effect, and how does it create bistability?",
-choices:["Species grow faster at high density; two stable equilibria at K and 2K","Below threshold A populations decline to extinction; stable equilibria at 0 and K with unstable at A","All populations grow to K regardless of starting point","Species compete and the stronger one always wins"],
+q:"The Allee effect creates bistability. What are the three equilibria?",
+choices:["0 (unstable), K/2 (stable), K (unstable)","0 (stable), A (unstable), K (stable)","0 (unstable), A (stable), K (unstable)","A (unstable), K/2 (stable), K (unstable)"],
 correct:1,
-exp:`Allee effect: below threshold A, growth rate is negative → extinction. Model: dP/dt = rP(P/A−1)(1−P/K). Three equilibria: P*=0 (stable), P*=A (unstable tipping point), P*=K (stable). <strong>Bistability</strong>: outcome depends entirely on initial condition. P(0) > A → survives to K. P(0) < A → crashes to 0.
-<div class="rw">🦁 African wild dogs need ~5 adults minimum. Below this threshold, local extinction is inevitable.</div>`},
-
-/* ══ TRAFFIC ══ */
-{t:"traffic",d:"easy",tp:"concept",
-q:"The traffic conservation law is ∂ρ/∂t + ∂q/∂x = 0. What does this equation say physically?",
-choices:["Traffic always flows at constant speed","The rate of change of density equals the net flux of cars in minus out","Traffic density is always uniform","Flow rate equals car speed"],
-correct:1,
-exp:`Cars are conserved — they aren't created or destroyed between on-ramps. The rate of change of density at any point <span class="f">∂ρ/∂t</span> equals the net flow in minus out <span class="f">−∂q/∂x</span>. More cars flowing in than out → density increases. Identical in form to conservation of mass in fluid mechanics.`},
+exp:`Model: dP/dt = rP(P/A−1)(1−P/K). P*=0 (stable), P*=A (unstable tipping point), P*=K (stable). Below A → extinction. Above A → grows to K. Bistability: outcome entirely depends on initial conditions.`},
 
 {t:"traffic",d:"easy",tp:"concept",
-q:"In the Greenshields model, at what density ρ is flow q maximized?",
-choices:["ρ = ρ_max","ρ = ρ_max/4","ρ = ρ_max/2","ρ = 0"],
+q:"∂ρ/∂t + ∂q/∂x = 0 says physically:",
+choices:["Traffic flows at constant speed","Rate of density change = net flux in minus out","Density is uniform everywhere","Flow equals speed"],
+correct:1,
+exp:`Cars are conserved. Density at a point changes only due to more cars arriving than leaving (or vice versa). Identical in structure to conservation of mass in fluid dynamics.`},
+
+{t:"traffic",d:"easy",tp:"concept",
+q:"In Greenshields model, flow q is maximized at density ρ = ?",
+choices:["ρ_max","ρ_max/4","ρ_max/2","0"],
 correct:2,
-exp:`Greenshields: <span class="f">q = u_max·ρ(1 − ρ/ρ_max)</span>. Differentiate and set to zero: dq/dρ = u_max(1 − 2ρ/ρ_max) = 0 → <span class="f">ρ* = ρ_max/2</span>. Maximum flow: q_max = u_max·ρ_max/4. Beyond ρ_max/2 you're in the congested regime — adding more cars actually decreases total flow.`},
+exp:`q = u_max·ρ(1−ρ/ρ_max). dq/dρ = 0 at <span class="f">ρ = ρ_max/2</span>. Beyond this density, adding cars decreases total flow — you're in the congested regime.`},
 
 {t:"traffic",d:"medium",tp:"concept",
-q:"In the congested regime (ρ > ρ_max/2), which direction does traffic wave speed c = dq/dρ point?",
-choices:["Forward — same direction as cars","Backward — against traffic flow","Zero — waves are stationary","Sideways — perpendicular to road"],
+q:"In congested traffic (ρ > ρ_max/2), wave speed c = dq/dρ is:",
+choices:["Positive — forward","Negative — backward against traffic","Zero","Equal to car speed"],
 correct:1,
-exp:`For Greenshields: c = u_max(1 − 2ρ/ρ_max). When ρ > ρ_max/2: c < 0 — wave speed is <strong>negative</strong>, meaning information travels backward against traffic. This explains phantom traffic jams: the 'slow down' signal propagates upstream. Drivers hit the jam miles behind the original disturbance, which may have already cleared.`},
+exp:`c = u_max(1−2ρ/ρ_max). For ρ > ρ_max/2: c < 0 — information travels upstream against traffic. This explains phantom jams: the slowdown signal propagates backward miles behind the original disturbance.`},
 
 {t:"traffic",d:"medium",tp:"formula",
-q:"The Rankine-Hugoniot shock speed formula is:",
-choices:["s = (ρ_R − ρ_L)/(q_R − q_L)","s = (q_R − q_L)/(ρ_R − ρ_L)","s = (q_R + q_L)/(ρ_R + ρ_L)","s = q_R/ρ_R − q_L/ρ_L"],
+q:"Rankine-Hugoniot shock speed formula:",
+choices:["s = (ρ_R−ρ_L)/(q_R−q_L)","s = (q_R−q_L)/(ρ_R−ρ_L)","s = (q_R+q_L)/(ρ_R+ρ_L)","s = q/ρ"],
 correct:1,
-exp:`Applying conservation of cars across the moving shock: <span class="f">s = (q_R − q_L)/(ρ_R − ρ_L)</span>. If s < 0: shock moves upstream (backward jam). If s > 0: shock moves downstream. If s = 0: stationary shock — a standing jam front. Derived from: ρ_L(u_L − s) = ρ_R(u_R − s) (conservation in the shock frame).`},
+exp:`From conservation across the shock: <span class="f">s = (q_R−q_L)/(ρ_R−ρ_L)</span>. s < 0: shock moves upstream (backward jam). s = 0: stationary jam front.`},
 
 {t:"traffic",d:"medium",tp:"concept",
-q:"When do characteristics in traffic flow form a shock vs a rarefaction wave?",
-choices:["Converging characteristics → rarefaction; diverging → shock","Converging characteristics → shock; diverging → rarefaction","All characteristics form shocks","All characteristics form rarefactions"],
+q:"Converging characteristics in traffic flow produce a:",
+choices:["Rarefaction wave","Shock wave","Standing wave","No effect"],
 correct:1,
-exp:`<strong>Converging characteristics</strong> (fans inward): carry different density values to the same point — contradiction → <strong>shock</strong> forms. <strong>Diverging characteristics</strong> (fans outward): create a gap in the solution filled by a smooth <strong>rarefaction wave</strong>. Example: green light releases stopped traffic → characteristics fan outward → rarefaction. Red light stops traffic → characteristics converge → shock at the light.`},
+exp:`Converging characteristics carry different density values to the same (x,t) point — a contradiction. The solution inserts a <strong>shock wave</strong> (discontinuity) there. Diverging characteristics → smooth rarefaction wave. Green light → rarefaction. Red light → shock.`},
 
 {t:"traffic",d:"hard",tp:"concept",
-q:"What does the Lax entropy condition require for a physically valid traffic shock?",
-choices:["Wave speed must be zero at the shock","Characteristics from both sides must run INTO the shock","The shock speed must be positive","Density must be continuous across the shock"],
+q:"The Lax entropy condition for traffic shocks requires:",
+choices:["Zero shock speed","Characteristics from both sides run INTO the shock","Density continuous at shock","Positive shock speed only"],
 correct:1,
-exp:`Lax entropy condition: <span class="f">c(ρ_L) > s > c(ρ_R)</span>. Characteristics from both sides must flow into the shock — information arrives from both sides. This rules out expansion shocks where density spontaneously drops (a jam that creates itself from nothing), which violates physical irreversibility. The entropy condition selects the unique physically correct weak solution.`},
-
+exp:`c(ρ_L) > s > c(ρ_R): characteristics from both sides must flow into the shock. Prevents physically impossible expansion shocks (density spontaneously dropping = jam creating itself from nothing). Selects the unique physically correct weak solution.`},
 ];
 
-/* ═══ STATE ═══ */
+/* ══ STATE ══ */
 let filtered=[...Q];
 let box1=[],box2=[],box3=[];
-let currentQ=null;
 let sc=0,sw=0;
 let answered=false;
 let lastTopic='';
 const sessionStart=Date.now();
 
-/* ═══ TIMER ═══ */
 setInterval(()=>{
   const s=Math.floor((Date.now()-sessionStart)/1000);
   const el=document.getElementById('timer');
   if(el)el.textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
 },1000);
 
-/* ═══ HELPERS ═══ */
 function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function interleave(arr){
   const topics=['vibrations','systems','population','traffic'];
@@ -535,7 +553,6 @@ function updateStats(){
   const done=sc+sw;const tot=filtered.length;
   document.getElementById('progress').style.width=tot>0?Math.min(100,done/tot*100)+'%':'0%';
 }
-
 function updateLeitner(box){
   for(let i=0;i<3;i++){
     const el=document.getElementById('lb'+i);if(!el)return;
@@ -544,14 +561,12 @@ function updateLeitner(box){
     else if([box1,box2,box3][i].length>0)el.classList.add('has-cards');
   }
 }
-
 function setFilter(f,btn,ac){
   document.querySelectorAll('.tab').forEach(t=>t.className='tab');
   btn.classList.add(ac);
   filtered=f==='all'?[...Q]:Q.filter(q=>q.t===f);
   resetDeck();
 }
-
 function resetDeck(){
   sc=0;sw=0;
   const shuf=!filtered.every(q=>q.t===filtered[0].t)?interleave(filtered):shuffle(filtered);
@@ -559,43 +574,34 @@ function resetDeck(){
   updateStats();updateLeitner(0);
   nextQ();
 }
-
 function getNext(){
   if(box1.length>0)return{card:box1.shift(),box:0};
   if(box2.length>0)return{card:box2.shift(),box:1};
   if(box3.length>0)return{card:box3.shift(),box:2};
   return null;
 }
-
 function nextQ(){
   answered=false;
+  chatHistory=[];
   document.getElementById('feedback').classList.remove('shown','correct-fb','wrong-fb');
   document.getElementById('explanation').classList.remove('shown');
   document.getElementById('next-btn').classList.remove('shown');
-
+  document.getElementById('ask-btn').classList.remove('shown');
   const next=getNext();
   if(!next){currentQ=null;showDone();updateStats();return;}
   currentQ=next.card;
   updateLeitner(next.box);
-  lastTopic=currentQ.t;
-
   const done=sc+sw;
   document.getElementById('q-counter').textContent=`Question ${done+1} · ${filtered.length} total · ${box1.length+box2.length+box3.length} in queue`;
-
-  // Shuffle choices keeping track of correct index
-  const indices=[0,1,2,3];
-  const shuffledIdx=shuffle(indices);
-  const newCorrect=shuffledIdx.indexOf(currentQ.correct);
-  currentQ._shuffled=shuffledIdx;
-  currentQ._newCorrect=newCorrect;
-
+  const indices=shuffle([0,1,2,3]);
+  currentQ._shuffled=indices;
+  currentQ._newCorrect=indices.indexOf(currentQ.correct);
   const examTag=currentQ.exam?'<span class="exam-tag">📋 on your exams</span>':'';
-  const choicesHTML=shuffledIdx.map((origIdx,i)=>`
+  const choicesHTML=indices.map((origIdx,i)=>`
     <button class="choice" id="choice-${i}" onclick="pick(${i})">
       <span class="choice-letter">${LETTERS[i]}</span>
       <span>${currentQ.choices[origIdx]}</span>
     </button>`).join('');
-
   document.getElementById('card-area').innerHTML=`
     <div class="card ${tclass(currentQ.t)}">
       <div class="q-meta">
@@ -606,52 +612,39 @@ function nextQ(){
       <div class="q-text">${currentQ.q}</div>
       <div class="choices">${choicesHTML}</div>
     </div>`;
-
   document.getElementById('exp-text').innerHTML=currentQ.exp;
   updateStats();
 }
-
 function pick(idx){
   if(answered)return;
   answered=true;
   const correct=currentQ._newCorrect;
   const isCorrect=idx===correct;
-
-  // Disable all choices
   for(let i=0;i<4;i++){
-    const el=document.getElementById('choice-'+i);
-    if(!el)continue;
+    const el=document.getElementById('choice-'+i);if(!el)continue;
     el.classList.add('disabled');
     if(i===correct)el.classList.add(isCorrect&&i===idx?'correct':'reveal-correct');
     else if(i===idx)el.classList.add('wrong');
   }
-
-  // Feedback bar
   const fb=document.getElementById('feedback');
-  const fbIcon=document.getElementById('fb-icon');
-  const fbText=document.getElementById('fb-text');
   if(isCorrect){
     fb.classList.add('shown','correct-fb');
-    fbIcon.textContent='✓';
-    fbText.textContent='Correct!';
-    sc++;
-    box3.push(currentQ);
+    document.getElementById('fb-icon').textContent='✓';
+    document.getElementById('fb-text').textContent='Correct!';
+    sc++;box3.push(currentQ);
   } else {
     fb.classList.add('shown','wrong-fb');
-    fbIcon.textContent='✗';
-    fbText.textContent='Not quite — see explanation below.';
-    sw++;
-    box1.push(currentQ);
+    document.getElementById('fb-icon').textContent='✗';
+    document.getElementById('fb-text').textContent='Not quite — see explanation below.';
+    sw++;box1.push(currentQ);
   }
-
   document.getElementById('explanation').classList.add('shown');
   document.getElementById('next-btn').classList.add('shown');
+  document.getElementById('ask-btn').classList.add('shown');
   updateStats();
 }
-
 function showDone(){
-  const tot=sc+sw;
-  const pct=tot>0?Math.round(sc/tot*100):0;
+  const tot=sc+sw;const pct=tot>0?Math.round(sc/tot*100):0;
   document.getElementById('card-area').innerHTML=`
     <div class="done-state">
       <span class="done-big">${pct}%</span>
@@ -664,16 +657,147 @@ function showDone(){
     </div>`;
   document.getElementById('q-counter').textContent='';
   document.getElementById('kb-hint').style.display='none';
-  document.getElementById('next-btn').classList.remove('shown');
 }
 
-function toggleBanner(btn){
-  const el=document.getElementById('banner-detail');
-  if(!el)return;
-  el.classList.toggle('open');
+/* ══ TUTOR ══ */
+function openTutor(){
+  if(!currentQ)return;
+  const overlay=document.getElementById('tutor-overlay');
+  overlay.classList.add('open');
+  // Set context
+  const ctx=document.getElementById('tutor-context');
+  ctx.textContent=`Question: "${currentQ.q}"`;
+  // Check API key
+  apiKey=localStorage.getItem('claude_api_key')||'';
+  if(!apiKey){
+    document.getElementById('tutor-input-row').style.display='none';
+    document.getElementById('tutor-messages').style.display='none';
+    document.getElementById('api-setup').style.display='block';
+  } else {
+    document.getElementById('tutor-input-row').style.display='flex';
+    document.getElementById('tutor-messages').style.display='flex';
+    document.getElementById('api-setup').style.display='none';
+    if(chatHistory.length===0){
+      // Auto-send a starter message
+      const correctChoiceText=currentQ.choices[currentQ.correct];
+      const userMsg=`I just answered a multiple choice question. The question was: "${currentQ.q}". The correct answer is: "${correctChoiceText}". Can you explain WHY this is correct in simple terms, and help me understand the underlying concept?`;
+      addMessage('user',userMsg,true);
+      callClaude(userMsg);
+    }
+  }
+  document.getElementById('tutor-input').focus();
 }
 
-/* ═══ KEYBOARD ═══ */
+function closeTutor(){
+  document.getElementById('tutor-overlay').classList.remove('open');
+}
+function overlayClick(e){
+  if(e.target===document.getElementById('tutor-overlay'))closeTutor();
+}
+
+function saveApiKey(){
+  const key=document.getElementById('api-key-input').value.trim();
+  if(!key.startsWith('sk-ant-')){alert('That doesn\'t look like a valid Anthropic API key. It should start with sk-ant-');return;}
+  localStorage.setItem('claude_api_key',key);
+  apiKey=key;
+  document.getElementById('tutor-input-row').style.display='flex';
+  document.getElementById('tutor-messages').style.display='flex';
+  document.getElementById('api-setup').style.display='none';
+  // Auto-send starter
+  const correctChoiceText=currentQ.choices[currentQ.correct];
+  const userMsg=`I just answered a multiple choice question. The question was: "${currentQ.q}". The correct answer is: "${correctChoiceText}". Can you explain WHY this is correct in simple terms?`;
+  addMessage('user',userMsg,true);
+  callClaude(userMsg);
+}
+
+function addMessage(role,text,hidden){
+  const msgs=document.getElementById('tutor-messages');
+  const div=document.createElement('div');
+  div.className='msg '+role;
+  if(hidden)div.style.display='none';
+  div.textContent=text;
+  msgs.appendChild(div);
+  msgs.scrollTop=msgs.scrollHeight;
+  return div;
+}
+
+function addThinking(){
+  const msgs=document.getElementById('tutor-messages');
+  const div=document.createElement('div');
+  div.className='msg thinking';
+  div.id='thinking-bubble';
+  div.textContent='Thinking...';
+  msgs.appendChild(div);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function removeThinking(){
+  const el=document.getElementById('thinking-bubble');
+  if(el)el.remove();
+}
+
+async function callClaude(userText){
+  const sendBtn=document.getElementById('tutor-send');
+  const input=document.getElementById('tutor-input');
+  sendBtn.disabled=true;
+  input.disabled=true;
+  addThinking();
+
+  // Build system prompt with full question context
+  const systemPrompt=`You are an expert tutor for an Applied Mathematics course using Haberman's textbook "Mathematical Models: Mechanical Vibrations, Population Dynamics, and Traffic Flow". 
+
+The student is studying for exams by Prof. Nevai. They are currently working on this question:
+
+QUESTION: ${currentQ.q}
+CORRECT ANSWER: ${currentQ.choices[currentQ.correct]}
+FULL EXPLANATION: ${currentQ.exp ? currentQ.exp.replace(/<[^>]+>/g,'') : ''}
+
+Your job is to help the student deeply understand WHY the answer is correct. Be conversational, use analogies, build intuition. Keep responses concise but complete. Use plain text (no markdown). If the student asks a follow-up, answer it in the context of this question and topic.`;
+
+  chatHistory.push({role:'user',content:userText});
+
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-5',
+        max_tokens:600,
+        system:systemPrompt,
+        messages:chatHistory
+      })
+    });
+    const data=await res.json();
+    removeThinking();
+    if(data.content&&data.content[0]){
+      const reply=data.content[0].text;
+      chatHistory.push({role:'assistant',content:reply});
+      addMessage('ai',reply);
+    } else if(data.error){
+      addMessage('ai','Error: '+data.error.message);
+    }
+  } catch(err){
+    removeThinking();
+    addMessage('ai','Something went wrong. Check your API key or internet connection.');
+  }
+  sendBtn.disabled=false;
+  input.disabled=false;
+  input.focus();
+}
+
+function sendMessage(){
+  const input=document.getElementById('tutor-input');
+  const text=input.value.trim();
+  if(!text)return;
+  input.value='';
+  addMessage('user',text);
+  callClaude(text);
+}
+
+function inputKeydown(e){
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();}
+}
+
+/* ══ KEYBOARD ══ */
 document.addEventListener('keydown',e=>{
   if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
   if(!answered){
@@ -683,6 +807,7 @@ document.addEventListener('keydown',e=>{
     else if(e.key==='d'||e.key==='D')pick(3);
   } else {
     if(e.key==='Enter')nextQ();
+    else if(e.key==='t'||e.key==='T')openTutor();
   }
 });
 
